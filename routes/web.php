@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/user', 'HomeController@index')->name('user');
+
+Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+{
+Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\MemberMiddleware'], function()
+{
+Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
+});
