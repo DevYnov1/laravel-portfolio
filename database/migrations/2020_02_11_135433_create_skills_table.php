@@ -15,11 +15,8 @@ class CreateSkillsTable extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //Nom de la competence
             $table->string('name');
-            //Une courte description
             $table->string('description');
-            //Le logo correspond au nom du fichier qui sera le logo 
             $table->string('logo'); 
             $table->timestamps();
         });
