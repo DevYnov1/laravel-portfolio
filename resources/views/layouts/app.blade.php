@@ -53,8 +53,6 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-link"><a href="{{ route('userList')}}">Liste Utilisateurs</a></li>
-                        <li class="nav-link"><a href="{{ route('userSkills')}}">Competences Utilisateurs</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
