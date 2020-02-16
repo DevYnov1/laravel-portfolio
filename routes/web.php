@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('user', 'UserController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user', 'HomeController@index')->name('user');
@@ -30,3 +32,8 @@ Route::group(['middleware' => 'App\Http\Middleware\MemberMiddleware'], function(
 {
 Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
 });
+
+Route::get('/userList', 'UsersController@userList')->name('userList');
+
+Route::get('/editProfile/{id}', 'UsersController@editProfile')->name('editProfile');
+
