@@ -41,3 +41,4 @@ Route::get('/userSkills', 'UsersController@userSkills')->name('userSkills');
 
 Route::patch('/user/{user_id}/skill/', 'UsersController@updateSkills')->name('updateSkills');
 
+Route::get('/delete{id}', 'UsersController@delete_user')->name('delete');

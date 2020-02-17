@@ -26,7 +26,7 @@
                         <th>{{$user -> email}}</th>
                         <th>{{$user -> type}}</th>
                         <th><a href=" {{ route('editProfile', $user -> id) }}"  class="btn btn-success">Edit</a>
-                        <button type="button" class="delete-modal btn btn-danger" data-info="{{$user -> id}},{{$user -> name}},{{$user -> firstname}},{{$user -> lastname}},{{$user -> email}},{{$user -> type}}">X</button></th>
+                        <a href="{{ route('delete', $user->id) }}" class="delete-modal btn btn-danger">X</a></th>
                     </tr>
                 @endforeach
                 </tbody>

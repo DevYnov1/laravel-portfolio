@@ -28,6 +28,11 @@ class UsersController extends Controller
         //
     }
 
+    public function show($id)
+    {
+
+    }
+
     public function update(Request $request, $id)
     {
         $request ->validate([
@@ -87,5 +92,15 @@ class UsersController extends Controller
         
 
         return view('profile', compact('user'));
+    }
+
+    public function delete_user($id) {
+
+        $user = User::find($id);
+    
+        $user->delete();
+    
+        return view('/userList');
+    
     }
 }
